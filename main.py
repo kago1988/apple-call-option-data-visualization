@@ -51,4 +51,3 @@ plot.show_correlation_2('Time', 'Trading Volume', 'CALL: (Strike + Ask) at Bid D
 # Implied volatility and interest rate: see "./data/implied_volatility.jpg" and "./data/interest_rate.jpg". 
 G = Greeks('c', AAPL_call_options, call_option_interest_rate_series, time_until_expiration_series)
 G.return_greeks() 
-S

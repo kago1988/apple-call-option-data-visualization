@@ -12,4 +12,4 @@ Assume she buys a put option at time 0. Then her payoff at time t < expiration d
 ```
 Payoff at time t = - UnderlyingPrice at time t + (Strike Price at time 0 + Ask Price at time 0). 
 ```
-The put options are more of a defensive measure. They are also more abstract. 
+The put options are often being used as more of a defensive measure. 

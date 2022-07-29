@@ -33,18 +33,18 @@ time_until_expiration_series = C.get_time_until_expiration_series()
 
 
 
-# THESIS I: At expiration date: Is "AVE(STRIKE PRICES + ASK PRICES)" a good predictor for the stock price? 
+# THESIS I: At expiration date: Is "AVE(ASK PRICES + STRIKE PRICES)" a good predictor for the stock price? 
 # ANSWER: Yes: Look at './results/thesis_1.png'. The red dots can be calculated for the future and you can run a regression over them. 
-plot.show_finance('stock_price_dates', 'stock price', 'CALL: ave(strike prices + ask prices) at expiration', trading_days_series, underlying_price_series, 
+plot.show_finance('stock_price_dates', 'stock price', 'CALL: ave(ask prices + strike prices) at expiration', trading_days_series, underlying_price_series, 
                     scattered_expiration_days_series, scattered_strike_price_plus_ask_price_series)
 
 # THESIS II: Look for correlations between a) trading volume and b) difference between high and low stock value.  
 # ANSWER: Look at './results/thesis_2.png' they are very correllated. 
 plot.show_correlation('Stock Trading Volume', 'Stock: SPREAD Between high and low stock value', AAPL_stock_vol, AAPL_stock_spread)
 
-# THESIS III: Right at the date when the call option is bid: Are the individual "(STRIKE PRICE + ASK PRICE)" correlated with the trading volume? 
-# ANSWER: Look at './results/thesis_3a.png' and './results/thesis_3b.png'. I cannot see that the individual "(STRIKE PRICE + ASK PRICE)" and trading vol are correlated. 
-plot.show_correlation_2('Time', 'Trading Volume', 'CALL: (Strike + Ask) at Bid Date', AAPL_stock_date, AAPL_stock_vol, 
+# THESIS III: Right at the date when the call option is bid: Are the individual "(ASK PRICE + STRIKE PRICE)" correlated with the trading volume? 
+# ANSWER: Look at './results/thesis_3a.png' and './results/thesis_3b.png'. I cannot see that the individual "(ASK PRICE + STRIKE PRICE)" and trading vol are correlated. 
+plot.show_correlation_2('Time', 'Trading Volume', 'CALL: (Ask + Strike) at Bid Date', AAPL_stock_date, AAPL_stock_vol, 
                 AAPL_call_options['DataDate'], (AAPL_call_options['Strike']+AAPL_call_options['Ask']))
 
 # CALCULATE GREEKS 
